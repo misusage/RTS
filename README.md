@@ -1,7 +1,7 @@
 # RTS
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/3386438/56666721-4232d800-6661-11e9-8809-8391b3e986ae.jpeg|https://user-images.githubusercontent.com/3386438/56666721-4232d800-6661-11e9-8809-8391b3e986ae.jpeg" alt="RTS"/>
+<img src="https://user-images.githubusercontent.com/3386438/56666721-4232d800-6661-11e9-8809-8391b3e986ae.jpeg" alt="RTS"/>
 </p>
 
 Red-Team *Stuff*
