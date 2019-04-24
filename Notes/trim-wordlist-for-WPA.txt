@@ -1,0 +1,14 @@
+#!/bin/bash
+#WPA has a minumum char limit. When you use rockyou or a different wordlist, 
+#then passwords less than 8 characters won't work with WPA.
+#To make cracking more efficient, just remove all the passwords that are less than 8 chars.
+
+if [ $# -ne 1 ]; then
+    echo "WPA Wordlist Converter"
+    echo "$0 <wordlist>"
+    exit
+fi
+
+#cat rockyou.txt | sort | uniq | pw-inspector -m 8 -M 63 > rockyou-wpa.txt
+cat $1 | sort | uniq | pw-inspector -m 8 -M 63 > $1-wpa.txt
+

